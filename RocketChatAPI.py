@@ -58,9 +58,9 @@ class RocketChatAPI:
             return d
 
     def Get_Public_Room(self):
-        url = self.baseurl + "api/publicRooms"
+        url = self.baseurl + "api/v1/channels.list"
         d = self.GET(url)
-        if d['status'] != 'success':
+        if d['success'] != True:
             print(d)
             raise("Error getting rooms list")
         else:
